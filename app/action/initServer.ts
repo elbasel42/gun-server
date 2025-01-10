@@ -1,6 +1,6 @@
 'use server';
 
-import { createServer } from 'http2';
+import { createServer } from 'http';
 import Gun from 'gun';
 
 let serverRunning = false;
@@ -31,8 +31,8 @@ export const initServer = async () => {
   });
 
   // Start the server
-  server.listen(3005, () => {
+  server.listen(3000, () => {
     serverRunning = true;
-    console.log('Server is listening on http://localhost:3005');
+    console.log('Server is listening on http://localhost:3000');
   });
 };
