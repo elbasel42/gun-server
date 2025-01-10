@@ -1,12 +1,22 @@
 'use client';
 
 import { useEffect } from 'react';
-import { initServer } from './action/initServer';
+// import { initServer } from './action/initServer';
 
 const HomePage = () => {
   useEffect(() => {
-    initServer();
+    const eventSource = new EventSource('/api/server');
+
+    eventSource.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      console.log('Received:', data);
+    };
+
+    return () => {
+      eventSource.close();
+    };
   }, []);
+
   return null;
 };
 
