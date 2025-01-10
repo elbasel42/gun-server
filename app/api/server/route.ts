@@ -1,6 +1,3 @@
-'use client';
-
-export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic'; // always run dynamically
 
 import { NextRequest, NextResponse } from 'next/server';
