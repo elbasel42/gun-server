@@ -1,5 +1,3 @@
-'use server';
-
 import { createServer } from 'http';
 import Gun from 'gun';
 import { NextRequest, NextResponse } from 'next/server';
